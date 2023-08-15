@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1Form</title>
+</head>
+<body bgcolor="skyblue" >
+    <font size="4" face="arial" color="black">
+    <img src="images.jpeg" alt="form picture" width="500" height="100">
+    <h2>Fill the form (* fields are mandatory)</h2>
+
+    <form action="form.js">
+
+    <div>
+        Username* : <input type="text" name="username" id="" required>
+    </div><br>
+    
+    <div>
+        Password* : <input type="password" name="password" id="" required>
+    </div><br>
+
+    <label for="name">Name*</label>
+    <div>
+        <input type="name" name="myname" id="name" required>
+    </div><br>
+
+    <label for="regno">Regno*</label>
+    <div>
+        <input type="text" name="myregno" id="regno" required>
+    </div><br>
+
+    <label for="dob">Date of birth*</label>
+    <div>
+        <input type="date" name="mydob" id="dob" required>
+    </div><br>
+
+    <div>
+        Email id : <input type="email" name="mymail" id="">
+    </div><br>
+
+    <label for="city">City*</label>
+    <div>
+        <input type="city" name="mycity" id="city">
+    </div><br>
+
+    <label for="gender">Gender*</label>
+    <div>
+        Male<input type="radio" name="mygender" id="gender">Female<input type="radio" name="mygender" id="gender" required>
+    </div><br>
+
+    <label for="course">Couse*</label>
+    <div>
+        <select name="mycourse" id="course" required>
+            <option value=""selected>select course</option>
+            <option value="bca">BCA</option>
+            <option value="bsc">Bsc</option>
+            <option value="btech">Btech</option>
+            <option value="bba">BBA</option>
+        </select>
+    </div><br>
+    Fees structure : <a href="1fees.html" target="_blank">Click here</a><br>
+
+    <div>
+        Write comment <br><textarea name="comment" id="" cols="50" rows="10"></textarea>
+    </div><br>
+
+    <a href="https://nicepage.com/k/instruction-web-page-design" target="_blank">Instructions</a><br>
+
+    <div>
+        Have you read all the instructions? <input type="checkbox" name="instruction" id="" required>
+    </div><br>
+
+    <div>
+        <input type="submit" name="submit" id="">
+    </div><br>
+    <div>
+        <input type="reset" name="" id="">
+    </div><br>
+    </form>
+    </font>
+
+</body>
+</html>
