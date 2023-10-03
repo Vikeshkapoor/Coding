@@ -2,26 +2,30 @@
 #include <string.h>
 using namespace std;
 void candidate_details();
-void voting();
 void result();
 int i = 0, n, x;
 int candidate1 = 0, candidate2 = 0, candidate3 = 0, nota = 0;
 
-// Voter details
-struct voter
+// Voter class
+class voter
 {
     char name[20];
     int age, vote;
+
+public:
+    void getdata();
+    void voting();
 } v[100];
 
-// voting process
+// list to vote or see results
 int main()
 {
+    int i = 0;
     candidate_details();
     cout << endl
          << endl
-         << "\t\tVOTING" << endl;
-    cout << "Enter the no. to perform task" << endl;
+         << "\t\t(---VOTING---)" << endl;
+    cout <<endl<< "Enter the no. to perform task";
     do
     {
         cout << endl
@@ -34,7 +38,9 @@ int main()
         {
         case 1:
         {
-            voting();
+            v[i].getdata();
+            v[i].voting();
+            i++;
             break;
         }
         case 2:
@@ -57,6 +63,9 @@ int main()
 // Candidate details
 void candidate_details()
 {
+    cout<<"------------------------------------------------------------------------------------------"<<endl;
+    cout<<"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"<<endl;
+    cout<<"------------------------------------------------------------------------------------------"<<endl;
     cout << "Candidate id no. - 1"
          << endl
          << "\t\tName - Vikesh"
@@ -78,30 +87,38 @@ void candidate_details()
          << "Id no. - 4"
          << endl
          << "\t\tNOTA" << endl;
+    cout<<"------------------------------------------------------------------------------------------"<<endl;
+    cout<<"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"<<endl;
+    cout<<"------------------------------------------------------------------------------------------"<<endl;
+
+}
+
+// taking voter details
+void voter::getdata()
+{
+    cout << "Enter your name = ";
+    cin >> name;
+    cout << "Enter your age = ";
+    cin >> age;
 }
 
 // voting process
-void voting()
+void voter::voting()
 {
-    i++;
-    cout << endl
-         << i << "- Enter your name = ";
-    cin >> v[i].name;
-    cout << "Enter your age = ";
-    cin >> v[i].age;
-    if (v[i].age >= 18)
+    if (age >= 18)
     {
         cout << "Enter candidate id number(voting) = ";
-        cin >> v[i].vote;
-        if (v[i].vote == 1)
+        cin >> vote;
+        cout<<"------------------------------------------------------------------------------------------";
+        if (vote == 1)
         {
             candidate1++;
         }
-        else if (v[i].vote == 2)
+        else if (vote == 2)
         {
             candidate2++;
         }
-        else if (v[i].vote == 3)
+        else if (vote == 3)
         {
             candidate3++;
         }
@@ -113,14 +130,17 @@ void voting()
     else
     {
         cout << "You are not eligible for voting (Because age should be >=18" << endl;
+        cout<<"------------------------------------------------------------------------------------------";
     }
 }
 // results
 void result()
 {
-
 // printing results
 results:
+    cout<<"------------------------------------------------------------------------------------------"<<endl;
+    cout<<"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"<<endl;
+    cout<<"------------------------------------------------------------------------------------------"<<endl;
     cout << endl
          << "\t\t\tVoting results" << endl;
     cout << "Candidate 1 = " << candidate1 << endl
@@ -153,4 +173,7 @@ results:
              << "\tName = Darun" << endl
              << "\tNo. of votes = " << candidate3 << endl;
     }
+    cout<<"------------------------------------------------------------------------------------------"<<endl;
+    cout<<"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"<<endl;
+    cout<<"------------------------------------------------------------------------------------------"<<endl;
 }

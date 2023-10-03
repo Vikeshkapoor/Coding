@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="">
+      <fieldset>
+        <legend>Academic information</legend>
+        <div>
+          Degree
+          <select name="deg">
+            <option value="MBA">Master of business administration</option>
+            <option value="BCA">Bachelor of Computer Applications</option>
+          </select>
+        </div>
+        <br />
+        <div>Student id <input type="text" /></div>
+        <br />
+        Classes ateended<select name="sub" size="3">
+          <option value="Geo">Geography</option>
+          <option value="math">Mathematics</option>
+          <option value="eng">English</option>
+        </select>
+      </fieldset>
+      <fieldset>
+        <legend>Personal Details</legend>
+        <div>First name <input type="text" /></div>
+        <div>Last name <input type="text" /></div>
+        <div>
+          Gender: <input type="radio" name="gender" />Male
+          <input type="radio" name="gender" />Female
+        </div>
+        <div>Email <input type="email" /></div>
+      </fieldset>
+      <br />
+      <div>
+        <textarea
+          name="terms"
+          id=""
+          cols="50%"
+          rows="10"
+          placeholder="Terms and conditions..."
+        ></textarea>
+      </div>
+      <br />
+      <input type="submit" value="Send form" />
+      <input type="reset" value="Clear Form" />
+    </form>
+  </body>
+</html>
